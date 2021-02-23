@@ -4,6 +4,59 @@
     <meta charset="UTF-8">
     <title>갤러리리스트 페이지</title>
     <link rel="stylesheet" href="style/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        /*gnb메뉴 마우스 hover 시작*/
+            $("nav#gnb li").hover(function() {
+                $("nav#gnb li").removeClass("selected");
+                $(this).addClass("selected");
+            });
+
+
+        /*gnb메뉴 마우스 hover 끝*/
+
+        /*모달 레이어 팝업 시작*/
+        $("#galleryList .galleryArticle").click(function(){
+            var idx = $(this). index();
+
+            switch (idx) {
+                    case 0:
+                    $("div#idx0").css({"display":"block"});
+                    break;
+
+                    case 1:
+                    $("div#idx1").css({"display":"block"});
+                    break;
+
+                    case 2:
+                    $("div#idx2").css({"display":"block"});
+                    break;
+
+                    case 3:
+                    $("div#idx3").css({"display":"block"});
+                    break;
+
+                    case 4:
+                    $("div#idx4").css({"display":"block"});
+                    break;
+
+                    case 5:
+                    $("div#idx5").css({"display":"block"});
+                    break;
+                    }
+
+        });
+
+        $(".modalBackground>.modalArticle span.closeBtn").click(function(){
+            $("div.modalBackground").css({"display":"none"});
+        /*모달 레이어 팝업 끝*/
+        });
+
+                 });
+
+    </script>
 </head>
 
 <body>
@@ -49,8 +102,8 @@
                     <img src="images/list_02_615x615.jpg" alt="썸네일이미지1" width="200">
                     <span class="leadTxt">[리바트온라인]</span>
                     <span class="goodsName">
-                    솔브 4일 헤드틸팅
-                    리클라이너 소파(양면형, 3색/택1)
+                        솔브 4일 헤드틸팅
+                        리클라이너 소파(양면형, 3색/택1)
                     </span>
                     <span class="price">835,000 </span>
                 </div>
@@ -58,7 +111,7 @@
                     <img src="images/list_03_615x615.jpg" alt="썸네일이미지2" width="200">
                     <span class="leadTxt">[리바트온라인]</span>
                     <span class="goodsName">
-                    뉴 레가토 4인 리클라이너 소파 양면형 3색택1
+                        뉴 레가토 4인 리클라이너 소파 양면형 3색택1
                     </span>
                     <span class="price">
                         1,059,300
@@ -68,7 +121,7 @@
                     <img src="images/list_04_615x615.jpg" alt="썸네일이미지3" width="200">
                     <span class="leadTxt">[리바트온라인]</span>
                     <span class="goodsName">
-                    올 뉴탐 3인 패브릭 소파 8종택1
+                        올 뉴탐 3인 패브릭 소파 8종택1
                     </span>
                     <span class="price">
                         419,000
@@ -78,7 +131,7 @@
                     <img src="images/list_05_220x220.jpg" alt="썸네일이미지4" width="200">
                     <span class="leadTxt">[리바트온라인]</span>
                     <span class="goodsName">
-                    무드 레트로 1800 거실장
+                        무드 레트로 1800 거실장
                     </span>
                     <span class="price">
                         185,000
@@ -88,7 +141,7 @@
                     <img src="images/list_06_615x615.jpg" alt="썸네일이미지5" width="200">
                     <span class="leadTxt">[리바트온라인]</span>
                     <span class="goodsName">
-                    후아 1800 다리형 거실장 (2색 중 택1)
+                        후아 1800 다리형 거실장 (2색 중 택1)
                     </span>
                     <span class="price">
                         165,000
@@ -98,7 +151,7 @@
                     <img src="images/list_07_220x220.jpg" alt="썸네일이미지6" width="200">
                     <span class="leadTxt">[인터라켄]</span>
                     <span class="goodsName">
-                    북유럽디자인 이태리가죽 3인소파
+                        북유럽디자인 이태리가죽 3인소파
                     </span>
                     <span class="price">
                         899,000
@@ -109,7 +162,96 @@
             </div> <!-- div#galleryList -->
         </main> <!-- main#main -->
 
-
     </div> <!-- div#wrap -->
+
+
+    <!--모달레이어 팝업 소스 위치 시작-->
+    <div class="modalBackground" id="idx0">
+        <div class="modalArticle">
+            <img src="images/list_02_615x615.jpg" alt="모달용원본이미지1" width="400">
+            <span class="modalleadTxt">[리바트온라인]</span>
+            <span class="modalgoodsName">
+                솔브 4일 헤드틸팅
+                리클라이너 소파(양면형, 3색/택1)
+            </span>
+            <span class="modalprice">835,000 </span>
+
+            <span class="closeBtn">&times;</span>
+
+        </div>
+    </div>
+
+    <div class="modalBackground" id="idx1">
+        <div class="modalArticle">
+            <img src="images/list_03_615x615.jpg" alt="모달용원본이미지2" width="400">
+            <span class="modalleadTxt">[리바트온라인]</span>
+            <span class="modalgoodsName">
+                뉴 레가토 4인 리클라이너 소파 양면형 3색택1
+            </span>
+            <span class="modalprice">1,059,000 </span>
+
+            <span class="closeBtn">&times;</span>
+
+        </div>
+    </div>
+
+    <div class="modalBackground" id="idx2">
+        <div class="modalArticle">
+            <img src="images/list_04_615x615.jpg" alt="모달용원본이미지3" width="400">
+            <span class="modalleadTxt">[리바트온라인]</span>
+            <span class="modalgoodsName">
+                올 뉴탐 3인 패브릭 소파 8종택1
+            </span>
+            <span class="modalprice">419,000 </span>
+
+            <span class="closeBtn">&times;</span>
+
+        </div>
+    </div>
+
+    <div class="modalBackground" id="idx3">
+        <div class="modalArticle">
+            <img src="images/list_05_220x220.jpg" alt="모달용원본이미지4" width="400">
+            <span class="modalleadTxt">[리바트온라인]</span>
+            <span class="modalgoodsName">
+                무드 레트로 1800 거실장
+            </span>
+            <span class="modalprice">185,000 </span>
+
+            <span class="closeBtn">&times;</span>
+
+        </div>
+    </div>
+
+    <div class="modalBackground" id="idx4">
+        <div class="modalArticle">
+            <img src="images/list_06_615x615.jpg" alt="모달용원본이미지5" width="400">
+            <span class="modalleadTxt">[리바트온라인]</span>
+            <span class="modalgoodsName">
+                후아 1800 다리형 거실장 (2색 중 택1)
+            </span>
+            <span class="modalprice">165,000 </span>
+
+            <span class="closeBtn">&times;</span>
+
+        </div>
+    </div>
+
+    <div class="modalBackground" id="idx5">
+        <div class="modalArticle">
+            <img src="images/list_07_220x220.jpg" alt="모달용원본이미지6" width="400">
+            <span class="modalleadTxt">[인터라켄]</span>
+            <span class="modalgoodsName">
+                북유럽디자인 이태리가죽 3인소파
+            </span>
+            <span class="modalprice">899,000 </span>
+
+            <span class="closeBtn">&times;</span>
+
+        </div>
+    </div>
+    <!--모달레이어 팝업 소스 위치 끝-->
+
+
 
 </body></html>
