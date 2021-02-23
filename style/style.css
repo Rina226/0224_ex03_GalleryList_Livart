@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+/* Reset 시작 */
+* {
+    color: #000;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a         {    text-decoration: none;    }
+a:link    {    color: #333;    }
+a:visited {    color: #333;    }
+a:hover   {    color: #333;    }
+a:active  {    color: #333;    }
+
+ul {
+    list-style-type: none;
+}
+/* Reset 끝 */
+
+/* Guide line 시작 */
+div#wrap    { border: 1px solid #000; }
+/*div#left {border: 1px solid #f80;}*/
+/*div#galleryList {border: 1px solid #0f0;}*/
+/*nav#gnb     { border: 1px solid #000; }*/
+/* Guide line 끝 */
+
+
+
+/* div#wrap 전체영역 시작 */
+div#wrap {
+    width: 1060px;
+    margin: 0 auto;
+}
+/* div#wrap 전체영역 끝 */
+/*전체 폭 1160
+메인왼쪽 390
+메인오른쪽(갤러리리스트)770. 여유공간을 계산하여 750정도 잡기*/
+
+/* header#header 시작 */
+header#header {
+    text-align: center;
+}
+#header>h1 {
+    height: 100px;
+    line-height: 100px;
+}
+nav#gnb {
+    width: 690px;
+    margin: 16px auto;
+}
+nav#gnb>#mainMenu>li {
+    float: left;
+}
+nav#gnb li.selected {
+    font-weight: bold;
+}
+nav#gnb>#mainMenu::after {
+    content: "";
+    display: inline-block;
+}
+nav#gnb>#mainMenu>li:not(:last-child)::after {
+    content: "|";
+    width: 50px;
+    font-size: 12px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: -1px;
+
+}
+nav#gnb>#mainMenu>li a {
+    font-size: 12px;
+}
+/* header#header 끝 */
+
+
+
+/* main#main 시작 */
+main#main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between; /*왼쪽 오른쪽 모두 벽에 붙여주는 기능*/
+}
+
+
+/*div#left 시작*/
+div#left {
+    width: 390px;
+
+}
+/*div#left 끝*/
+
+
+    /* div#galleryList 시작 */
+div#galleryList {
+    width: 630px;
+
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap; /*영역을 초과하지 못하도록 둘러씌움*/
+    justify-content: space-around; /*스페이스 비트윈과 다름. 전체 공간에서 균등하게 물체와 여백을 배치해 줌*/
+}
+
+div#galleryList div.galleryArticle {
+    /*border: 1px solid #000;*/
+    width: 200px;
+    text-align: center;
+}
+
+#galleryList .galleryArticle span.leadTxt {
+    font-weight: bold;
+    font-size: 12px;
+    color: #a07a56;
+}
+
+#galleryList .galleryArticle span.goodsName {
+    font-size: 13px;
+}
+
+#galleryList .galleryArticle span.price {
+    display: block; /*가격이 혼자 한 줄을 차지하기 위해 스팬요소를 블럭요소로 바꿈*/
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #208a88;
+}
+
+#galleryList .galleryArticle span.price::after {
+    content: " 원";
+        /*이렇게 하면 '원' 만 독립적으로 css설정가능*/
+    font-size: 16px;
+    /*color: #208a88;*/ /*부모요소인 프라이스에만 색 적용해도 상속을 받아 원의 색도 동일해짐*/
+}
+
+    /* div#galleryList 끝 */
+
+/* main#main 끝 */
+
+
+
+
+
+
+
+
+
+
+
+
